@@ -1,6 +1,6 @@
-#UTN - Diseño de Sistemas
+# UTN - Diseño de Sistemas
 
-####Ejemplo de API REST para pruebas.  
+#### Ejemplo de API REST para pruebas.  
 Se expone un servicio que permite hacer CRUD de entidad `Persona` mediante requests HTTP con el respectivo método y payload.
 El payload soportado es en formato JSON.  
 Ejemplo de serialización de una `Persona`:  
@@ -13,18 +13,18 @@ Ejemplo de serialización de una `Persona`:
 }
 ``
 
-####Métodos soportados:
+#### Métodos soportados:
 * GET: obtener información de una persona o todas las personas
 * POST: crear una nueva `Persona`
 * PUT: actualizar la información de una `Persona`
 * DELETE: eliminar una `Persona`
 
-####Para ejecutar el servidor de ejemplo:
+#### Para ejecutar el servidor de ejemplo:
 * Verificar que el puerto 8080 no esté en uso
 * Ejecutar `mvn clean spring-boot:run ` desde la terminal
 * El servidor estará disponible en `http://localhost:8080`
 
-####Ejemplos  de requests
+#### Ejemplos  de requests
 * Obtener información de todas las personas:  
 `GET http://localhost:8080/Persona/` 
 
