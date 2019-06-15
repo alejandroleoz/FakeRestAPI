@@ -6,6 +6,7 @@ import dds.model.Persona;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController()
 public class PersonaController {
@@ -19,6 +20,10 @@ public class PersonaController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/Persona/")
     public void save(@RequestBody Persona persona) {
+        Persona persistedPersona = personaRepository.find(persona.getDni());
+        if (Objects.nonNull(persistedPersona)) {
+            throw new RuntimeException("La persona ya existe existe");
+        }
         personaRepository.saveOrUpdate(persona);
     }
 
@@ -38,7 +43,7 @@ public class PersonaController {
     @RequestMapping(method = RequestMethod.PUT, path = "/Persona/")
     public void update(@RequestBody Persona persona) {
         Persona persistedPersona = personaRepository.find(persona.getDni());
-        if (persistedPersona == null) {
+        if (Objects.isNull(persistedPersona)) {
             throw new RuntimeException("La persona no existe");
         }
         personaRepository.saveOrUpdate(persona);
