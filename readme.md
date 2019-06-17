@@ -8,7 +8,7 @@ Ejemplo de serialización de una `Persona`:
 {
 "dni": 12345678,
 "nombre": "Leandro",
-"apellido": "Rodriguez,
+"apellido": "Rodriguez",
 "edad": 23
 }
 ``
